@@ -7,6 +7,7 @@ from src.db.db_obj import db
 from src.routes.admin.blueprint import admin_blueprint
 from src.routes.home.blueprint import home_blueprint
 from werkzeug.utils import secure_filename
+import sqlite3
 
 #Load env variables
    
@@ -19,6 +20,7 @@ app = Flask(__name__)
 # Load the cnofig variables
 
 app.config["SQLALCHEMY_DATABASE_URI"] = environ.get("DATABASE_URL")
+print(environ.get("DATABASE_URL"))
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=True
 
@@ -30,7 +32,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 db.init_app(app)
 
-db.create_all(app=app)
+#db.create_all(app=app)
 
 ckeditor = CKEditor()
 
