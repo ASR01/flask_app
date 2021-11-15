@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% from 'components/intro.html' import intro %}
+{% from 'components/blog_entries.html' import blog_entries %}
+{% from 'components/card.html' import card %}
+
+<div class = container>
+    {% block content %}
+        {{intro()}}
+        
+        <div class="row topic-name">
+            Projects
+        </div>
+        <div class="row">
+            
+            {%for project in pr_info%}
+                <div class="col">
+                    {{card(project)}}
+                </div>
+            {% endfor %}
+
+
+        </div>
+        <div class="row topic-name">
+            Articles
+        </div>
+        <div class="row">
+        
+            {%for articles in art_info%}
+                <div class="col">
+                    {{card(article)}}
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+   {% endblock %}
+
+
+</div>

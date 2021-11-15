@@ -1,0 +1,23 @@
+{%macro intro() %}
+
+<div class = 'row text light'>
+
+    <div class = 'col intro-text'>
+        
+        Please accompany me into my voyage into the Artificial Intelligence World. Here is possible to see an excertp of my projects and some links I find very useful.
+        
+
+        <form action="/" method="get" class="d-flex search-form">
+            <input name="q" class="form-control me-2 search-elements" type="search" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+    <div class="col">
+        <img src="{{ url_for('static', filename='svg/img.png') }}" style = "height:480px;max-width:480px" alt="illustration">
+    </div>
+
+</div>
+
+
+
+{% endmacro%}

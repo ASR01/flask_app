@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+
+
+    {% block content %}
+    <h1 class="mt-2">Create a new project entry</h1>
+ 
+     {{ ckeditor.load() }}
+     <form method="POST" action="/admin/new" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="title" required="true" type="text" class="form-control" id="text" aria-describedby="text">
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input required="true" name="category" type="text" class="form-control" id="text" aria-describedby="text">
+        </div>
+        
+        <div class="mb-3">
+            <label for="cover" class="form-label">Brief Description</label>
+            {{ ckeditor.create() }}
+        </div>
+
+        <div class="mb-3">
+            <label for="cover" class="form-label">Image of file</label>
+            <input name="cover" class="form-control form-control-lg" id="formFileLg" type="file">
+        </div>
+
+  
+    
+        <button type="submit" class="btn btn-light mt-2">Create new project entry</button>
+    </form>
+    {% endblock %}

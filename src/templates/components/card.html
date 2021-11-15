@@ -1,0 +1,11 @@
+{% macro card(project) -%}
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{project.image_url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><td><a href = "{{ project.project_url }}"">{{ project.title }}</a></td></h5>
+        <p class="card-text">{{project.content}}</p>
+        
+      </div>
+    </div>
+{%- endmacro %}

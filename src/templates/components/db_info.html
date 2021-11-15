@@ -1,0 +1,27 @@
+{% macro db_table(projects) -%}
+
+    <table id="data_table" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Url</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for project in projects%}
+        <tr>
+          <td>{{ project.title }}</td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.category }}</td>
+          <td><a href = "{{ project.project_url }}"">{{ project.project_url }}</a></td>  
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{%- endmacro %}
+
+
+
+    
